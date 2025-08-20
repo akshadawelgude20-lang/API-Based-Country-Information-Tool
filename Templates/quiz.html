@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country Flag Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            text-align: center;
+            margin: 30px;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .quiz-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .flag-img {
+            max-width: 200px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .options button {
+            padding: 12px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .options button:hover {
+            background: #0056b3;
+        }
+        .feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .next-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #28a745;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .next-btn:hover {
+            background: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌍 Country Flag Quiz</h1>
+
+    <div class="quiz-container">
+        <!-- Flag -->
+        <img src="{{ question['flag'] }}" alt="Country Flag" class="flag-img">
+
+        <!-- Options -->
+        <form method="POST">
+            <div class="options">
+                {% for option in question['options'] %}
+                <button type="submit" name="answer" value="{{ option }}">{{ option }}</button>
+                {% endfor %}
+            </div>
+        </form>
+
+        <!-- Feedback -->
+        {% if feedback %}
+        <div class="feedback">{{ feedback }}</div>
+        <form method="GET">
+            <button type="submit" class="next-btn">Next Question ➡</button>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
