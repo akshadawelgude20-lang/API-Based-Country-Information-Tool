@@ -101,10 +101,10 @@
             <p><b>Subregion:</b> {{ country1['subregion'] }}</p>
             <p><b>Population:</b> {{ country1['population'] }}</p>
             <p><b>Languages:</b> {{ country1['languages'] }}</p>
-            <p><b>Currency:</b> {{ country1['currency'] }}</p>
-            <p><b>Time Zone:</b> {{ country1['timezone'] }}</p>
+            <p><b>Currency:</b> {{ country1['currencies'] }}</p>
+            <p><b>Time Zone:</b> {{ country1['timezones'] }}</p>
             <p><b>Borders:</b> {{ country1['borders'] }}</p>
-            <p><b>Google Map:</b> <a href="{{ country1['google_map'] }}" target="_blank">View Map</a></p>
+            <p><b>Google Map:</b> <a href="{{ country1['map'] }}" target="_blank">View Map</a></p>
         </div>
 
         <div class="country-card">
@@ -115,12 +115,13 @@
             <p><b>Subregion:</b> {{ country2['subregion'] }}</p>
             <p><b>Population:</b> {{ country2['population'] }}</p>
             <p><b>Languages:</b> {{ country2['languages'] }}</p>
-            <p><b>Currency:</b> {{ country2['currency'] }}</p>
-            <p><b>Time Zone:</b> {{ country2['timezone'] }}</p>
+            <p><b>Currency:</b> {{ country2['currencies'] }}</p>
+            <p><b>Time Zone:</b> {{ country2['timezones'] }}</p>
             <p><b>Borders:</b> {{ country2['borders'] }}</p>
-            <p><b>Google Map:</b> <a href="{{ country2['google_map'] }}" target="_blank">View Map</a></p>
+            <p><b>Google Map:</b> <a href="{{ country2['map'] }}" target="_blank">View Map</a></p>
         </div>
     </div>
     {% endif %}
 </body>
+
 </html>
